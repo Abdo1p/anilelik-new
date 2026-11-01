@@ -13,8 +13,7 @@ import {
   Bookmark, 
   Mail, 
   Sparkles,
-  LogOut,
-  Download
+  LogOut
 } from 'lucide-react';
 
 interface HeaderProps {
@@ -239,17 +238,6 @@ export const Header: React.FC<HeaderProps> = ({
                 Ctrl+K
               </kbd>
             </button>
-
-            {/* ZIP Download Button */}
-            <a
-              href="/animelik-ready-to-upload.zip"
-              download="animelik-ready-to-upload.zip"
-              title="تحميل الموقع جاهز للرفع المباشر على استضافتك (Production ZIP)"
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 text-xs font-bold text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 border border-emerald-500/40 rounded-lg shadow-md shadow-emerald-900/30 transition-all hover:scale-105"
-            >
-              <Download className="w-3.5 h-3.5" />
-              <span>تحميل الموقع جاهز (ZIP)</span>
-            </a>
 
             {/* Theme Toggle Button */}
             <button

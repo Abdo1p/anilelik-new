@@ -1,5 +1,5 @@
 import React from 'react';
-import { Send, Twitter, Facebook, Shield, Heart, Film, ArrowUp, Download } from 'lucide-react';
+import { Send, Twitter, Facebook, Shield, Heart, Film, ArrowUp } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (tab: string, param?: any) => void;
@@ -41,26 +41,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <p className="text-sm leading-relaxed text-gray-400">
               موقع <strong className="text-gray-200">animelik</strong> هو بوابتك الرائدة لمشاهدة وتحميل أحدث حلقات ومواسم مسلسلات وأفلام الأنمي الياباني المترجمة باحترافية، بجودات متعددة وسيرفرات مشاهدة سريعة بدون تقطيع.
             </p>
-
-            {/* ZIP download buttons in footer */}
-            <div className="pt-1 flex flex-col sm:flex-row gap-2">
-              <a
-                href="/animelik-ready-to-upload.zip"
-                download="animelik-ready-to-upload.zip"
-                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs shadow-lg shadow-emerald-900/30 transition-all hover:scale-105"
-              >
-                <Download className="w-4 h-4" />
-                <span>الموقع جاهز للرفع (Production ZIP)</span>
-              </a>
-              <a
-                href="/animelik.zip"
-                download="animelik.zip"
-                className="inline-flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl bg-[#1b1e2a] hover:bg-[#252938] text-gray-300 hover:text-white border border-[#2d3142] font-semibold text-xs transition-colors"
-              >
-                <Download className="w-4 h-4 text-[#e50914]" />
-                <span>كود المصدر (Source ZIP)</span>
-              </a>
-            </div>
 
             <div className="flex items-center gap-3 pt-2">
               <a
