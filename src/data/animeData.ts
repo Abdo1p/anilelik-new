@@ -2,6 +2,7 @@ import { Anime, AnimeType, AnimeStatus } from '../types/anime';
 
 // Map of anime titles to official embed trailers/previews
 const TRAILER_MAP: Record<string, string> = {
+  'Hotaru no Yomeiri': 'ZyglwIaZ',
   'Tower of God': 'X7eI3rEaXo8',
   'Tower of God S2': 'X7eI3rEaXo8',
   'Oshi no Ko S2': 'zts8wYV_8zY',
@@ -72,8 +73,8 @@ export const createEpisodeServers = (animeTitle: string, epNum: number, customYo
 
 // Helper to generate download links
 export const createDownloadLinks = (animeTitle: string, epNum: number) => [
+  { server: 'Mega.nz', quality: '1080p FHD' as const, size: '1.2 GB', url: 'https://mega.nz/file/ZyglwIaZ#dMmLtHaiJZvNggZaBQ4a0fUw9kiAhq9QUPULelhPBoE' },
   { server: 'Google Drive', quality: '1080p FHD' as const, size: '1.2 GB', url: '#' },
-  { server: 'Mega.nz', quality: '1080p FHD' as const, size: '1.2 GB', url: '#' },
   { server: 'Mediafire', quality: '720p HD' as const, size: '650 MB', url: '#' },
   { server: '1Fichier', quality: '720p HD' as const, size: '640 MB', url: '#' },
   { server: 'Uptobox', quality: '480p SD' as const, size: '320 MB', url: '#' },
@@ -101,6 +102,7 @@ export const ALL_GENRES = [
 ];
 
 export const SEASONS_LIST = [
+  'شتاء 2026',
   'شتاء 2025',
   'خريف 2024',
   'صيف 2024',
@@ -112,6 +114,51 @@ export const SEASONS_LIST = [
 ];
 
 export const ANIME_DATABASE: Anime[] = [
+  {
+    id: 'hotaru-no-yomeiri',
+    slug: 'hotaru-no-yomeiri',
+    titleArabic: 'زواج اليراعة',
+    titleEnglish: 'Hotaru no Yomeiri',
+    titleJapanese: 'ほたるの嫁入り',
+    poster: 'https://i.ibb.co/1000188882.jpg',
+    backdrop: 'https://i.ibb.co/1000188882.jpg',
+    type: 'tv',
+    status: 'ongoing',
+    releaseYear: 2026,
+    seasonName: 'شتاء 2026',
+    rating: 8.9,
+    votesCount: 5200,
+    genres: ['رومانسي', 'تاريخي', 'دراما', 'إثارة', 'غموض'],
+    studio: 'Animation Studio',
+    episodesCount: 1,
+    durationPerEp: '24 دقيقة',
+    airDay: 'الأحد',
+    airTime: '20:00',
+    story: 'قصة حب درامية ومكثفة بين نبيلة من عائلة عريقة مصابة بمرض مميت وقاتل محترف غامض.',
+    trailerYoutubeId: 'ZyglwIaZ',
+    isFeatured: true,
+    isPinned: true,
+    seasons: [
+      {
+        id: 's1',
+        number: 1,
+        title: 'الموسم 1',
+        year: 2026,
+        episodesCount: 1,
+        episodes: Array.from({ length: 1 }, (_, i) => ({
+          id: `hotaru-s1-ep-${i + 1}`,
+          animeId: 'hotaru-no-yomeiri',
+          episodeNumber: i + 1,
+          title: `الحلقة ${i + 1} - البداية`,
+          thumbnail: 'https://i.ibb.co/1000188882.jpg',
+          duration: '24 دقيقة',
+          airedDate: '2026-01-01',
+          servers: createEpisodeServers('Hotaru no Yomeiri', i + 1, 'ZyglwIaZ'),
+          downloads: createDownloadLinks('Hotaru no Yomeiri', i + 1),
+        })),
+      },
+    ],
+  },
   {
     id: 'kami-no-tou-s2',
     slug: 'kami-no-tou-season-2',
@@ -992,10 +1039,10 @@ export const WEEKLY_SCHEDULE = [
   {
     day: 'الأحد',
     animes: [
+      { id: 'hotaru-no-yomeiri', title: 'Hotaru no Yomeiri', ep: 'الحلقة 1', time: '20:00', poster: 'https://i.ibb.co/1000188882.jpg' },
       { id: 'one-piece', title: 'One Piece', ep: 'الحلقة 1115', time: '09:30', poster: 'https://image.tmdb.org/t/p/w500/cMD9Ygz11yjqkzbUQGUgt4WUuv7.jpg' },
       { id: 'kami-no-tou-s2', title: 'Tower of God Season 2', ep: 'الحلقة 16', time: '17:30', poster: 'https://image.tmdb.org/t/p/w500/fUs9KMgEJj3wYJGa75MtPSdyJXk.jpg' },
       { id: 'kimetsu-no-yaiba-s4', title: 'Demon Slayer S4', ep: 'الحلقة 8', time: '19:15', poster: 'https://image.tmdb.org/t/p/w500/xUfRZu2mi8jH6SzQEJGP6tjBuYj.jpg' },
-      { id: 'mushoku-tensei-s2', title: 'Mushoku Tensei S2', ep: 'الحلقة 24', time: '20:00', poster: 'https://image.tmdb.org/t/p/w500/kVHnRfj5c7rzetzMPlRQXEZRzkH.jpg' },
     ],
   },
   {
